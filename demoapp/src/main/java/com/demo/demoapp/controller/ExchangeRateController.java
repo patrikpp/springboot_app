@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,6 +33,7 @@ public class ExchangeRateController {
         this.restTemplate = restTemplateBuilder.errorHandler(new RestTemplateResponseErrorHandler()).build();
     }
 
+    @CrossOrigin()
     @GetMapping
     public ResponseEntity<Page<ExchangeRate>> getAllExchangeRates(Pageable pageable, @RequestParam(name = "usedb", required = true) boolean usedb) {
         if (!usedb) {

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1216" />
+    <title>Exchange rates</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="custom-container main">
+        <h1 class="title text-center my-5">Exchange rates</h1>
+
+        <table class="table mx-auto w-25">
+            <thead>
+                <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">Name</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="exchange-rates-section">
+            </tbody>
+        </table>
+
+        <ul class="pagination d-flex justify-content-center mt-2-rem">
+            <li id="prev-page-btn" class="page-item"><a class="page-link" href="">Previous</a></li>
+            <li id="next-page-btn" class="page-item"><a class="page-link" href="">Next</a></li>
+        </ul>
+    </div>
+
+    <div id="modal-window" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 id="country-and-name" class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+              <p id="short-name"></p>
+              <p id="valid-from"></p>
+              <p id="move"></p>
+              <p id="amount"></p>
+              <p id="val-buy"></p>
+              <p id="val-sell"></p>
+              <p id="val-mid"></p>
+              <p id="curr-buy"></p>
+              <p id="curr-sell"></p>
+              <p id="curr-mid"></p>
+              <p id="version"></p>
+              <p id="cnb-mid"></p>
+              <p id="ecb-mid"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>      
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
