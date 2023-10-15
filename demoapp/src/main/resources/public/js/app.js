@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     async function fetchExchangeRates() {
         try {
             const response = await fetch(
-                `http://localhost:8080?usedb=true&page=${pageNumber}`
+                `http://localhost:8080/exchangerates/?usedb=true&page=${pageNumber}`
             );
             
             const responseJson = await response.json();

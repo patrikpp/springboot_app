@@ -4,10 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -21,6 +18,7 @@ import com.demo.demoapp.service.ExchangeRateService;
 import com.demo.demoapp.handler.RestTemplateResponseErrorHandler;
 
 @RestController
+@RequestMapping("/exchangerates")
 public class ExchangeRateController {
 
     private final ExchangeRateService exchangeRateService;
@@ -33,10 +31,9 @@ public class ExchangeRateController {
         this.restTemplate = restTemplateBuilder.errorHandler(new RestTemplateResponseErrorHandler()).build();
     }
 
-    @CrossOrigin()
     @GetMapping
-    public ResponseEntity<Page<ExchangeRate>> getAllExchangeRates(Pageable pageable, @RequestParam(name = "usedb", required = true) boolean usedb) {
-        if (!usedb) {
+    public ResponseEntity<Page<ExchangeRate>> getAllExchangeRates(Pageable pageable, @RequestParam(name = "usedb", required = true) boolean useDB) {
+        if (!useDB) {
             String url = "https://webapi.developers.erstegroup.com/api/csas/public/sandbox/v2/rates/exchangerates";
             UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("web-api-key", webApiKey);
