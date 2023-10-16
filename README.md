@@ -1,4 +1,4 @@
-Pred spustením aplikácie je potrebné definovať konfiguračné údaje v súbore application.properties.
+Pred spustením aplikácie je potrebné definovať konfiguračné údaje v súbore src/main/resources/application.properties. Aplikácia je po spustení dostupná na http://localhost:8080/.
 
 ## Tech Stack:
 
